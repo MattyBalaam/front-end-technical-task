@@ -5,66 +5,98 @@
     <title>Make This Responsive</title>
 
     <style type="text/css">
-      * {
+
+      html {
         box-sizing: border-box;
+      }
+
+      *, 
+      *:before, 
+      *:after {
+        box-sizing: inherit;
       }
 
       h1 {
         font-size: 3.5em;
       }
 
+      .img--responsive {
+        max-width: 100%;
+        height: auto;
+      }
+
       .wrapper {
-        width: 800px;
+        width: 100%;
+        max-width: 800px;
         margin: 20px auto;
       }
 
       .listing {
-        overflow: hidden;
-        margin: 0 0 25px 0;
+        margin: 0 -12.5px 25px -12.5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      @media (min-width: 540px) {
+        .listing {
+          justify-content: space-between;
+        }
       }
 
       .story {
-        float: left;
-        width: 250px;
-        margin-right: 25px;
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 250px;
+        min-width: 250px;
+        margin: 0 12.5px 25px 12.5px;
         position: relative;
         font-size: 80%;
       }
 
-      .story img {
-        display: block;
+      .story--main {
+        position: relative;
+        flex: 1 1 100%;
+        width: 100%;
+      }
+
+      .story--last {
+        justify-self: space-between;
+      }
+
+      .story__image {
+        object-fit: cover;
+        background-color: #eee;
+      }
+
+      .story__image--secondary {
+        max-height: 30vh;
+      }
+
+      @media (min-width: 816px) {
+        .story__image {
+          max-height: none;
+        }
       }
 
       .story__intro {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
         background: rgba(0, 0, 0, 0.75);
         padding: 20px;
         color: white;
       }
 
-      .story__intro h2 {
+      .story__heading {
         margin: 0 0 10px 0;
       }
 
-      .story__intro p {
-        margin: 0;
-      }
-
-      .story--main {
-        position: relative;
-        margin: 0 0 25px 0;
-        width: 100%;
-      }
-      .story--main .story__intro h2 {
+      .story__heading--main {
         font-size: 2.5em;
       }
 
-      .story--last {
-        margin-right: 0;
+      .story__paragraph {
+        margin: 0;
       }
+
     </style>
   </head>
 
@@ -76,35 +108,35 @@
 
       <section class="listing">
         <article class="story story--main">
-          <img src="http://placehold.it/800x389" alt="Placeholder Image" />
+          <img class="story__image story__image--main img--responsive" src="http://placehold.it/800x389" height="389" width="800" alt="Placeholder Image 800x389" />
 
           <div class="story__intro">
-            <h2>Most Important Story</h2>
-            <p>This article has the most visual weight.</p>
+            <h2 class="story__heading story__heading--main">Most Important Story</h2>
+            <p class="story__paragraph">This article has the most visual weight.</p>
           </div>
         </article>
 
-        <article class="story">
-          <img src="http://placehold.it/250x350" alt="Placeholder Image" />
+        <article class="story story--secondary">
+          <img  class="story__image story__image--secondary img--responsive" src="http://placehold.it/250x350" height="350px" width="250px" alt="Placeholder Image 250x350" />
           <div class="story__intro">
-            <h2>Less Important Story</h2>
-            <p>This story has less visual weight.</p>
+            <h2 class="story__heading">Less Important Story</h2>
+            <p class="story__paragraph">This story has less visual weight.</p>
           </div>
         </article>
 
-        <article class="story">
-          <img src="http://placehold.it/250x350" alt="Placeholder Image" />
+        <article class="story story--secondary">
+          <img class="story__image story__image--secondary img--responsive" src="http://placehold.it/250x350" height="350" width="250" alt="Placeholder Image 250x350" />
           <div class="story__intro">
-            <h2>Less Important Story</h2>
-            <p>This story has less visual weight.</p>
+            <h2 class="story__heading">Less Important Story</h2>
+            <p class="story__paragraph">This story has less visual weight.</p>
           </div>
         </article>
 
-        <article class="story story--last">
-          <img src="http://placehold.it/250x350" alt="Placeholder Image" />
+        <article class="story story--secondary story--last">
+          <img class="story__image story__image--secondary img--responsive" src="http://placehold.it/250x350" height="350" width="250" alt="Placeholder Image 250x350" />
           <div class="story__intro">
-            <h2>Less Important Story</h2>
-            <p>This story has less visual weight.</p>
+            <h2 class="story__heading">Less Important Story</h2>
+            <p class="story__paragraph">This story has less visual weight.</p>
           </div>
         </article>
       </section>
