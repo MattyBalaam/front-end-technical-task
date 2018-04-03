@@ -1,4 +1,4 @@
-# json-viewer
+# Vue posts
 
 > technical task for BozBoz
 
