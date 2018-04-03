@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "json-viewer",
+  "productName": "json-viewer",
+  "description": "technical task for BozBoz",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "poi",
+    "build": "poi build",
+    "report": "poi build --bundle-report",
+    "serve": "serve dist --single",
+    "test": "tyu"
+  },
+  "author": {
+    "name": "mattybalaam",
+    "email": "mattybalaam@gmail.com"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0",
+    "object-assign": "^4.1.1",
+    "promise-polyfill": "^6.0.2",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "poi": "^9.0.0",
+    "poi-preset-bundle-report": "^2.0.0",
+    "serve": "^6.1.0",
+    "tyu": "^1.0.4"
+  }
+}
