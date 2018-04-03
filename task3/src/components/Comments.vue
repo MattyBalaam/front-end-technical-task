@@ -49,9 +49,6 @@
     }
     .comments-list__items {
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
     }
     .comment:not(:first-of-type){
         border-top: 1px solid #666;
